@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7kshcjigx0tq"]
+
+[ext_resource type="Texture2D" uid="uid://6d6gy4mckami" path="res://image/Groundtiles.png" id="1_okkbb"]
+[ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0m5"]
+size = Vector2(244, 20)
+
+[node name="world" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(1, 142)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+texture_repeat = 3
+position = Vector2(0.500004, 5.5)
+scale = Vector2(5.10417, 1.03125)
+texture = ExtResource("1_okkbb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_1l0m5")
+
+[node name="root" parent="." instance=ExtResource("2_xnflr")]

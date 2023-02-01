@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5gqchow5tbhc"
-path="res://.godot/imported/Rootsprite.png-9f2a0ee27c60229f42042026c0b86123.ctex"
+uid="uid://6d6gy4mckami"
+path="res://.godot/imported/Groundtiles.png-7bd859c19a69bca06f19f6c00fd485aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Rootsprite.png"
-dest_files=["res://.godot/imported/Rootsprite.png-9f2a0ee27c60229f42042026c0b86123.ctex"]
+source_file="res://image/Groundtiles.png"
+dest_files=["res://.godot/imported/Groundtiles.png-7bd859c19a69bca06f19f6c00fd485aa.ctex"]
 
 [params]
 

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqq8cvwa7nuxc"]
-
-[ext_resource type="PackedScene" uid="uid://bpk05kgagfk0w" path="res://vroot.tscn" id="1_qh42a"]
-
-[node name="world" type="Node2D"]
-
-[node name="root" parent="." instance=ExtResource("1_qh42a")]
