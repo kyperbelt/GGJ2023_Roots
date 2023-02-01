@@ -12,7 +12,7 @@ size = Vector2(244, 20)
 position = Vector2(1, 142)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
-texture_repeat = 3
+texture_filter = 1
 position = Vector2(0.500004, 5.5)
 scale = Vector2(5.10417, 1.03125)
 texture = ExtResource("1_okkbb")
@@ -21,3 +21,4 @@ texture = ExtResource("1_okkbb")
 shape = SubResource("RectangleShape2D_1l0m5")
 
 [node name="root" parent="." instance=ExtResource("2_xnflr")]
+texture_filter = 1
