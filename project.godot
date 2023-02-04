@@ -15,6 +15,10 @@ run/main_scene="res://src/world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://image/icon.svg"
 
+[dotnet]
+
+project/assembly_name="GGJ2023_Roots"
+
 [input]
 
 move_up={
