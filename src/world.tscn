@@ -26,3 +26,5 @@ shape = SubResource("RectangleShape2D_1l0m5")
 
 [node name="root" parent="." instance=ExtResource("2_xnflr")]
 texture_filter = 1
+_standing_still_max = null
+_wind_threshold = null

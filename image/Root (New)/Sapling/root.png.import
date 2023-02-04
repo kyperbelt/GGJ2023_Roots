@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg4tnxsrcxjp7"
-path="res://.godot/imported/ColorPalette.png-662e57d7eb7f391c151d4077576e3349.ctex"
+uid="uid://dtp8b0ij8we30"
+path="res://.godot/imported/root.png-8a1384b0ec53bb002960a515d2f5a7cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Root (New)/Sapling/ColorPalette.png"
-dest_files=["res://.godot/imported/ColorPalette.png-662e57d7eb7f391c151d4077576e3349.ctex"]
+source_file="res://image/Root (New)/Sapling/root.png"
+dest_files=["res://.godot/imported/root.png-8a1384b0ec53bb002960a515d2f5a7cd.ctex"]
 
 [params]
 
