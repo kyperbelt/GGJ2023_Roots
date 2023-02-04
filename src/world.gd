@@ -9,7 +9,6 @@ signal wind_ended()
 @export
 var _wind_velocity:= 0.0
 
-
 @export_range(1,100,1, "or_greater")
 var wind_duration := 1.0
 var wind_elapsed := 0.0

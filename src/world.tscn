@@ -10,6 +10,7 @@ size = Vector2(244, 20)
 [node name="world" type="Node2D"]
 script = ExtResource("1_jkfy3")
 _wind_velocity = 100.0
+wind_duration = 2.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(1, 142)

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+class_name Vroot
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -55,7 +56,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	if _wind > 0 && standing_still_alpha < _wind_threshold:
-		velocity.x += _wind	
+		velocity.x = _wind	
 
 	if velocity.x == 0:
 		animation_player.play("RESET")
