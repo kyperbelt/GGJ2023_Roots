@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # create a mechanic for when the player is standing still, the longer he stands still the slower he moves
 # until a max where he can't move at all
 var standing_still_elapsed:= 0.0
+@export
 var standing_still_max := 3.0
 
 
@@ -25,7 +26,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_down"):
 		standing_still_elapsed += delta
 	else: 
-		standing_still_elapsed -= delta
+		standing_still_elapsed  = 0.0
 
 	standing_still_elapsed = clamp(standing_still_elapsed, 0, standing_still_max)
 	var standing_still_alpha = standing_still_elapsed/standing_still_max
@@ -39,8 +40,6 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-
-
 	move_and_slide()
 
 
