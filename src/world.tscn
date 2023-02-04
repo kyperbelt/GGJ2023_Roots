@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7kshcjigx0tq"]
+[gd_scene load_steps=5 format=3 uid="uid://c7kshcjigx0tq"]
 
+[ext_resource type="Script" path="res://src/world.gd" id="1_jkfy3"]
 [ext_resource type="Texture2D" uid="uid://6d6gy4mckami" path="res://image/Groundtiles.png" id="1_okkbb"]
 [ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
 
@@ -7,6 +8,8 @@
 size = Vector2(244, 20)
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_jkfy3")
+_wind_velocity = 100.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(1, 142)
