@@ -2,7 +2,6 @@ extends Node2D
 
 class_name SappyWorld
 
-
 signal wind_started(wind_velocity)
 signal wind_ended()
 
