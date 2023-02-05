@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cllvvyhh8w53v"]
+[gd_scene load_steps=4 format=3 uid="uid://cllvvyhh8w53v"]
 
 [ext_resource type="Texture2D" uid="uid://ctgy3u14eyegg" path="res://image/icon.svg" id="1_hrec7"]
+[ext_resource type="Script" path="res://src/flourish_platform.gd" id="1_xjr6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpntr"]
 size = Vector2(128, 20)
 
 [node name="flourish_platform" type="StaticBody2D"]
+script = ExtResource("1_xjr6p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.500001, 2.5)

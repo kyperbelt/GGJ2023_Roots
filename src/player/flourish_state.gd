@@ -17,4 +17,5 @@ func update(delta: float):
         print("Flourish end")
         _player.position.y -= _player.max_height * _player.growth_alpha
         _player.set_state(_player.States.Idle)
+        _player.flourished.emit(_player.position)
 
