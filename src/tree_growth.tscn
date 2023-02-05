@@ -1,25 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4jwercthf2jv"]
+[gd_scene load_steps=9 format=3 uid="uid://c0yd6ahsto7oc"]
 
 [ext_resource type="Texture2D" uid="uid://cppljyrg27kbo" path="res://image/Root (New)/Tree/Tree Growth/tiledtrunk.png" id="1_cs0u6"]
-[ext_resource type="Texture2D" uid="uid://bha2rpooado5f" path="res://image/Root (New)/Tree/Tree Growth/Trunk.png" id="2_b6iw6"]
+[ext_resource type="Script" path="res://src/tree_growth.gd" id="1_wh7gl"]
+[ext_resource type="Texture2D" uid="uid://n5hdu4vus8ip" path="res://image/Root (New)/Tree/Tree Growth/tiledtrunkbottom.png" id="2_3qsk5"]
 
-[sub_resource type="Animation" id="Animation_vfnov"]
-resource_name = "growth"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("trunk_center:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1.31951),
-"update": 0,
-"values": [Rect2(0, 0, 73.248, 10), Rect2(0, 0, 73.248, 200)]
-}
-
-[sub_resource type="Animation" id="Animation_ehc5j"]
+[sub_resource type="Animation" id="Animation_whfaj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -46,7 +31,23 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_1vy1h"]
+[sub_resource type="Animation" id="Animation_7whn5"]
+resource_name = "growth"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trunk_center:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1.31951),
+"update": 0,
+"values": [Rect2(0, 0, 73.248, 10), Rect2(0, 0, 73.248, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_nya5r"]
 resource_name = "trunk1"
 length = 0.25
 step = 0.18
@@ -63,9 +64,8 @@ tracks/0/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_e085p"]
+[sub_resource type="Animation" id="Animation_6tpmk"]
 resource_name = "trunk_growth"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -102,23 +102,36 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.394893),
+"transitions": PackedFloat32Array(1, 0.840896),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0545"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7jyh"]
 _data = {
-"RESET": SubResource("Animation_ehc5j"),
-"growth": SubResource("Animation_vfnov"),
-"trunk1": SubResource("Animation_1vy1h"),
-"trunk_growth": SubResource("Animation_e085p")
+"RESET": SubResource("Animation_whfaj"),
+"growth": SubResource("Animation_7whn5"),
+"trunk1": SubResource("Animation_nya5r"),
+"trunk_growth": SubResource("Animation_6tpmk")
 }
 
 [node name="tree_growth" type="Node2D"]
+script = ExtResource("1_wh7gl")
 
 [node name="trunk_center" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(32, -148)
-scale = Vector2(-1, -0.636)
+position = Vector2(30, -47)
+scale = Vector2(-1.09921, -0.636)
 texture = ExtResource("1_cs0u6")
 centered = false
 flip_v = true
@@ -128,10 +141,10 @@ region_rect = Rect2(0, 0, 73.248, 10)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "trunk_growth"
 libraries = {
-"": SubResource("AnimationLibrary_u0545")
+"": SubResource("AnimationLibrary_p7jyh")
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8, -152)
-texture = ExtResource("2_b6iw6")
-hframes = 3
+position = Vector2(-1, -12)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_3qsk5")
