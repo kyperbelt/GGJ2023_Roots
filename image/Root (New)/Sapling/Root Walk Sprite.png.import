@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5gqchow5tbhc"
-path="res://.godot/imported/Rootsprite.png-da186172b7dc3b7fa55dc6897b6445c3.ctex"
+uid="uid://818wfgqdd31q"
+path="res://.godot/imported/Root Walk Sprite.png-a0c197a9f5dbebc208873ec2a0d62354.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Rootsprite.png"
-dest_files=["res://.godot/imported/Rootsprite.png-da186172b7dc3b7fa55dc6897b6445c3.ctex"]
+source_file="res://image/Root (New)/Sapling/Root Walk Sprite.png"
+dest_files=["res://.godot/imported/Root Walk Sprite.png-a0c197a9f5dbebc208873ec2a0d62354.ctex"]
 
 [params]
 

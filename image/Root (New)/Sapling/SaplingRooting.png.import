@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5gqchow5tbhc"
-path="res://.godot/imported/Rootsprite.png-da186172b7dc3b7fa55dc6897b6445c3.ctex"
+uid="uid://dvcm2cke8w051"
+path="res://.godot/imported/SaplingRooting.png-110279a5cc1bd394f8ddb98407cc2b0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Rootsprite.png"
-dest_files=["res://.godot/imported/Rootsprite.png-da186172b7dc3b7fa55dc6897b6445c3.ctex"]
+source_file="res://image/Root (New)/Sapling/SaplingRooting.png"
+dest_files=["res://.godot/imported/SaplingRooting.png-110279a5cc1bd394f8ddb98407cc2b0f.ctex"]
 
 [params]
 

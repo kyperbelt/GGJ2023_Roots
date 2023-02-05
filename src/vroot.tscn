@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg55ohfumfff"]
+[gd_scene load_steps=9 format=3 uid="uid://dg55ohfumfff"]
 
 [ext_resource type="Script" path="res://src/vroot.gd" id="1_vh1ve"]
-[ext_resource type="Texture2D" uid="uid://b5gqchow5tbhc" path="res://image/Rootsprite.png" id="2_3e5l7"]
+[ext_resource type="Texture2D" uid="uid://818wfgqdd31q" path="res://image/Root (New)/Sapling/Root Walk Sprite.png" id="2_54g8k"]
+[ext_resource type="Texture2D" uid="uid://cy6wwd5x6p5r5" path="res://image/Root (New)/Sapling/SaplingRootingCentered.png" id="3_w0u7d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bwcm"]
-height = 36.0
+radius = 9.0
+height = 22.0
 
 [sub_resource type="Animation" id="Animation_bwhdb"]
 length = 0.001
@@ -35,34 +37,42 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [1, 2]
 }
+
+[sub_resource type="Animation" id="Animation_r6agm"]
+resource_name = "rooting"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6nwuo"]
 _data = {
 "RESET": SubResource("Animation_bwhdb"),
-"move": SubResource("Animation_0cf5t")
+"move": SubResource("Animation_0cf5t"),
+"rooting": SubResource("Animation_r6agm")
 }
 
 [node name="root" type="CharacterBody2D"]
 script = ExtResource("1_vh1ve")
+flourish_duration = 0.4
 
 [node name="icon" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(5, -1)
-scale = Vector2(3, 3)
-texture = ExtResource("2_3e5l7")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_54g8k")
 flip_h = true
-hframes = 2
+hframes = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
 texture_filter = 1
-offset_left = -2.0
-offset_top = -48.0
-offset_right = 51.0
-offset_bottom = -30.0
+offset_left = -31.0
+offset_top = 7.0
+offset_right = 97.0
+offset_bottom = 135.0
+scale = Vector2(0.5, 0.5)
+value = 50.0
 rounded = true
-show_percentage = false
+fill_mode = 2
+texture_progress = ExtResource("3_w0u7d")
 
 [node name="nameplate" type="Label" parent="."]
 offset_left = -63.0
@@ -71,11 +81,10 @@ offset_right = 73.0
 offset_bottom = -68.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
 zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, -1)
+position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_1bwcm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
