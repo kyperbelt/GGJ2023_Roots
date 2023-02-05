@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qtg68wimbi4q"
+path="res://.godot/imported/Sappling_FS_Mtn_5.wav-d1f5ce701438062a0afbcc16f36ca649.sample"
+
+[deps]
+
+source_file="res://Sound/sfx/Sappling SFX/Sappling Footsteps/Sappling FS Mountain/Sappling_FS_Mtn_5.wav"
+dest_files=["res://.godot/imported/Sappling_FS_Mtn_5.wav-d1f5ce701438062a0afbcc16f36ca649.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

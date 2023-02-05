@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dg55ohfumfff"]
 
 [ext_resource type="Script" path="res://src/vroot.gd" id="1_vh1ve"]
-[ext_resource type="Texture2D" uid="uid://818wfgqdd31q" path="res://image/Root (New)/Sapling/Root Walk Sprite.png" id="2_54g8k"]
-[ext_resource type="Texture2D" uid="uid://cy6wwd5x6p5r5" path="res://image/Root (New)/Sapling/SaplingRootingCentered.png" id="3_w0u7d"]
+[ext_resource type="Texture2D" uid="uid://d22c3e585n3hl" path="res://image/Root (New)/Sapling/RootSpriteFix.png" id="2_wqcl2"]
+[ext_resource type="Texture2D" uid="uid://dtp8b0ij8we30" path="res://image/Root (New)/Sapling/root.png" id="3_ypy3k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bwcm"]
 radius = 9.0
@@ -52,27 +52,26 @@ _data = {
 
 [node name="root" type="CharacterBody2D"]
 script = ExtResource("1_vh1ve")
-flourish_duration = 0.4
 
 [node name="icon" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(5, -1)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_54g8k")
+texture = ExtResource("2_wqcl2")
 flip_h = true
-hframes = 3
+hframes = 4
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 texture_filter = 1
-offset_left = -31.0
-offset_top = 7.0
-offset_right = 97.0
-offset_bottom = 135.0
-scale = Vector2(0.5, 0.5)
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 92.0
+scale = Vector2(-0.6, 0.5)
 value = 50.0
 rounded = true
 fill_mode = 2
-texture_progress = ExtResource("3_w0u7d")
+texture_progress = ExtResource("3_ypy3k")
+texture_progress_offset = Vector2(-70, 0)
 
 [node name="nameplate" type="Label" parent="."]
 offset_left = -63.0

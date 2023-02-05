@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxj3wqffrsjih"
+path="res://.godot/imported/Adult_Girl_FS_Cave_3.wav-3e9b1f250f91b99830f9a917fc9f6704.sample"
+
+[deps]
+
+source_file="res://Sound/sfx/Girl SFX/Adult Girl SFX/Adult Girl Foot Steps Cave/Adult_Girl_FS_Cave_3.wav"
+dest_files=["res://.godot/imported/Adult_Girl_FS_Cave_3.wav-3e9b1f250f91b99830f9a917fc9f6704.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
