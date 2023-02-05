@@ -5,9 +5,10 @@ class_name IdleState
 func enter(player):
     super.enter(player)
     player.animation_player.play("RESET")
+    print("IdleState")
 
 func update(_delta: float):
-    if Input.is_action_just_pressed("move_down"):
+    if Input.is_action_pressed("move_down"):
         _player.set_state(Vroot.States.Growing)
         return
 
