@@ -9,6 +9,7 @@ func enter(player: Vroot):
 
 func update(_delta : float):
     if Input.is_action_just_pressed("move_down"):
+        _player.velocity.x = 0
         _player.set_state(Vroot.States.Idle)
         return
     if !_player.is_on_floor():
