@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0yd6ahsto7oc"]
+[gd_scene load_steps=9 format=3 uid="uid://d4jwercthf2jv"]
 
 [ext_resource type="Texture2D" uid="uid://cppljyrg27kbo" path="res://image/Root (New)/Tree/Tree Growth/tiledtrunk.png" id="1_cs0u6"]
 [ext_resource type="Script" path="res://src/tree_growth.gd" id="1_wh7gl"]
@@ -125,6 +125,7 @@ _data = {
 
 [node name="tree_growth" type="Node2D"]
 script = ExtResource("1_wh7gl")
+duration = 2.0
 
 [node name="trunk_center" type="Sprite2D" parent="."]
 visible = false

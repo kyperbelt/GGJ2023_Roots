@@ -18,6 +18,9 @@ signal growth_finished
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@onready
+var camera := $Camera2D
+
 # Get the _gravity from the project settings to be synced with RigidBody nodes.
 var _gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -28,6 +31,8 @@ var _standing_still_elapsed:= 0.0
 
 var standing_still_alpha := 0.0
 
+@export
+var step_latency := 0.2
 @export
 var flourish_duration:= 1.0
 @export
@@ -61,6 +66,12 @@ var current := 0
 
 @onready
 var grapple := $root_grapple
+var pressed_position:Vector2
+
+func _input(event):
+	if event is InputEventMouseButton:
+		pass
+
 
 func _ready():
 	add_to_group("player")
