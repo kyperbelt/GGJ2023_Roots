@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c7kshcjigx0tq"]
+[gd_scene load_steps=19 format=3 uid="uid://c7kshcjigx0tq"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_jkfy3"]
 [ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b5xn6fbxhs56c" path="res://Sound/sfx/Ambient SFX/Ambience_Forest.wav" id="5_3ramy"]
 [ext_resource type="Texture2D" uid="uid://cs4wbpad7pwr1" path="res://image/midgroundFirstLevel.png" id="5_hmkff"]
 [ext_resource type="Texture2D" uid="uid://dsp2yfl8ji7ms" path="res://image/levelOneRock1.png" id="6_a48xi"]
+[ext_resource type="PackedScene" uid="uid://cg6i54rerrbfb" path="res://src/grapple_tree.tscn" id="7_gwel1"]
 [ext_resource type="Texture2D" uid="uid://dvih4x7ppmco2" path="res://image/levelOneRock2.png" id="7_ksn3q"]
 [ext_resource type="Texture2D" uid="uid://b3mf5urdm88fy" path="res://image/levelOneRock3.png" id="8_xqqe2"]
 
@@ -59,15 +60,44 @@ position = Vector2(-131, 67)
 polygon = PackedVector2Array(-5, 3, 27, -12, 61, -8, 81.5383, 4.02249, 102, 16, 141, 18, 179, 17, 214, 14, 246.658, 12.9794, 278, 12, 310.616, 7.86557, 349, 3, 370, -2, 397, 3, 427, 10, 452, 7, 475.669, 7, 500, 7, 521.22, 2.62122, 543.009, -1.87488, 563, -6, 556, -42, 566, -60, 588.259, -65.5648, 614, -72, 639.48, -73.0617, 662, -74, 685.427, -72.5358, 710, -71, 746, -62, 769.519, -63.3066, 794.137, -64.6743, 815.336, -65.852, 836, -67, 857.432, -68.786, 878.705, -70.5588, 902.114, -72.5096, 932, -75, 967, -106, 993, -123, 1071.61, -138.264, 1096, -143, 1126.17, -149.129, 1160, -156, 1194.14, -163.587, 1223, -170, 1251.88, -177.601, 1280, -185, 1301.25, -193.971, 1325, -204, 1353.8, -206.618, 1380, -209, 1414, -207, 1441, -187, 1451, -146, 1444, -119, 1402, -101, 1362, -82, 1337, -65, 1337, -31, 1348, 6, 1378, 38, 1413, 66, 1451, 72, 1556, 81, 1636, 80, 1747, 81, 1799, 83, 1851, 83, 1891, 80, 1935, 73, 1984, 63, 2044, -44, 2068, -107, 2089, -162, 2101, -192, 2116, -229, 2131, -329, 2162, -293, 2205, -298, 2262, -292, 2288, -291, 2307, -302, 2377, -301, 2433, -306, 2477, -298, 2515, -298, 2553, -294, 2554, -269, 2553, 37, 2554, 102, 1956, 98, 1222, 99, 503, 98, -5, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
+texture_repeat = 3
 position = Vector2(-136, -551)
 texture = ExtResource("5_hmkff")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 720)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(-195, -220.75)
 shape = SubResource("RectangleShape2D_8t71k")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
+position = Vector2(2495, -227)
+shape = SubResource("RectangleShape2D_8t71k")
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(4942, 1267)
+scale = Vector2(-1, 1)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor2"]
+position = Vector2(-131, 67)
+polygon = PackedVector2Array(-5, 3, 27, -12, 61, -8, 81.5383, 4.02249, 102, 16, 141, 18, 179, 17, 214, 14, 246.658, 12.9794, 278, 12, 310.616, 7.86557, 349, 3, 370, -2, 397, 3, 427, 10, 452, 7, 475.669, 7, 500, 7, 521.22, 2.62122, 543.009, -1.87488, 563, -6, 556, -42, 566, -60, 588.259, -65.5648, 614, -72, 639.48, -73.0617, 662, -74, 685.427, -72.5358, 710, -71, 746, -62, 769.519, -63.3066, 794.137, -64.6743, 815.336, -65.852, 836, -67, 857.432, -68.786, 878.705, -70.5588, 902.114, -72.5096, 932, -75, 967, -106, 993, -123, 1071.61, -138.264, 1096, -143, 1126.17, -149.129, 1160, -156, 1194.14, -163.587, 1223, -170, 1251.88, -177.601, 1280, -185, 1301.25, -193.971, 1325, -204, 1353.8, -206.618, 1380, -209, 1414, -207, 1441, -187, 1451, -146, 1444, -119, 1402, -101, 1362, -82, 1337, -65, 1337, -31, 1348, 6, 1378, 38, 1413, 66, 1451, 72, 1556, 81, 1636, 80, 1747, 81, 1799, 83, 1851, 83, 1891, 80, 1935, 73, 1984, 63, 2044, -44, 2068, -107, 2089, -162, 2101, -192, 2116, -229, 2131, -329, 2162, -293, 2205, -298, 2262, -292, 2288, -291, 2307, -302, 2377, -301, 2433, -306, 2477, -298, 2515, -298, 2553, -294, 2554, -269, 2553, 37, 2554, 102, 1956, 98, 1222, 99, 503, 98, -5, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor2"]
+texture_repeat = 3
+position = Vector2(-136, -551)
+texture = ExtResource("5_hmkff")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2(-195, -220.75)
+shape = SubResource("RectangleShape2D_8t71k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor2"]
 position = Vector2(2495, -227)
 shape = SubResource("RectangleShape2D_8t71k")
 
@@ -83,10 +113,13 @@ scroll_ignore_camera_zoom = true
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="background/ParallaxLayer"]
-texture_repeat = 2
+texture_filter = 1
+texture_repeat = 3
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("4_plweu")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 720)
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3ramy")
@@ -137,6 +170,7 @@ position = Vector2(441, 1319)
 shape = SubResource("CapsuleShape2D_t5mku")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(322, -91)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(2186, 1013)
@@ -149,3 +183,6 @@ texture = ExtResource("8_xqqe2")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(2274, 1018)
 shape = SubResource("CapsuleShape2D_rdidg")
+
+[node name="grapple_tree" parent="." instance=ExtResource("7_gwel1")]
+position = Vector2(2329, 936)
