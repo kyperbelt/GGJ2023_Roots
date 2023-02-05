@@ -14,5 +14,8 @@ func update(delta: float):
 	else: 
 		_player.growth_alpha = clamp(_player.standing_still_alpha, 0, 1)
 		_player._standing_still_elapsed = 0
+		_player.set_state(_player.States.Flourish)
+
+
 
 

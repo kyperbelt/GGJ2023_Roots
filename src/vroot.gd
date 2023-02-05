@@ -10,6 +10,8 @@ enum States{
 	Falling
 }
 
+signal flourished(location: Vector2)
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -69,7 +71,6 @@ func _physics_process(delta):
 
 	_standing_still_elapsed = clamp(_standing_still_elapsed, 0, _standing_still_max)
 	standing_still_alpha = _standing_still_elapsed/_standing_still_max
-	print(standing_still_alpha)
 	var progress_bar : TextureProgressBar = $ProgressBar
 	progress_bar.value = standing_still_alpha * progress_bar.max_value
 	# Get the input direction and handle the movement/deceleration.
