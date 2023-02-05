@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7kshcjigx0tq"]
+[gd_scene load_steps=21 format=3 uid="uid://c7kshcjigx0tq"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_jkfy3"]
 [ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cg6i54rerrbfb" path="res://src/grapple_tree.tscn" id="7_gwel1"]
 [ext_resource type="Texture2D" uid="uid://dvih4x7ppmco2" path="res://image/levelOneRock2.png" id="7_ksn3q"]
 [ext_resource type="Texture2D" uid="uid://b3mf5urdm88fy" path="res://image/levelOneRock3.png" id="8_xqqe2"]
+[ext_resource type="Texture2D" uid="uid://cfjuk733gj358" path="res://image/TitleScreen/Leaf_Icon.png" id="10_7jaqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8t71k"]
 size = Vector2(141, 792.5)
@@ -44,6 +45,17 @@ height = 128.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdidg"]
 radius = 38.0
 height = 76.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v0jod"]
+lifetime_randomness = 0.34
+particle_flag_disable_z = true
+gravity = Vector3(100, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = 1.4
+angle_max = 1.5
+scale_min = 0.1
+scale_max = 0.1
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_jkfy3")
@@ -186,3 +198,10 @@ shape = SubResource("CapsuleShape2D_rdidg")
 
 [node name="grapple_tree" parent="." instance=ExtResource("7_gwel1")]
 position = Vector2(2329, 936)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_v0jod")
+texture = ExtResource("10_7jaqa")
+lifetime = 107.66
+randomness = 1.0
+visibility_rect = Rect2(-100, -100, 200, 1000)

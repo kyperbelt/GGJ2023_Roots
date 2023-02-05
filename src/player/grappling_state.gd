@@ -12,7 +12,8 @@ func enter(player: Vroot):
 	_direction = _player.to_local(mouse_pos).normalized()
 	grapple = _player.grapple
 	grapple.shoot(_player.to_local(mouse_pos))
-	print("position: ", mouse_pos)
+	# print("position: ", mouse_pos)
+
 	pass
 
 func update(delta: float):
