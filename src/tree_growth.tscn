@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4jwercthf2jv"]
+[gd_scene load_steps=8 format=3 uid="uid://d4jwercthf2jv"]
 
 [ext_resource type="Texture2D" uid="uid://cppljyrg27kbo" path="res://image/Root (New)/Tree/Tree Growth/tiledtrunk.png" id="1_cs0u6"]
 [ext_resource type="Texture2D" uid="uid://bha2rpooado5f" path="res://image/Root (New)/Tree/Tree Growth/Trunk.png" id="2_b6iw6"]
@@ -63,30 +63,75 @@ tracks/0/keys = {
 "values": [0, 1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_e085p"]
+resource_name = "trunk_growth"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trunk_center:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 60, 10), Rect2(0, 0, 60, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("trunk_center:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.346516),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u0545"]
 _data = {
 "RESET": SubResource("Animation_ehc5j"),
 "growth": SubResource("Animation_vfnov"),
-"trunk1": SubResource("Animation_1vy1h")
+"trunk1": SubResource("Animation_1vy1h"),
+"trunk_growth": SubResource("Animation_e085p")
 }
 
 [node name="tree_growth" type="Node2D"]
 
 [node name="trunk_center" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-47, -67)
-scale = Vector2(1.0411, 6.7)
+position = Vector2(32, -148)
+scale = Vector2(-1, -0.636)
 texture = ExtResource("1_cs0u6")
 centered = false
+flip_v = true
 region_enabled = true
 region_rect = Rect2(0, 0, 73.248, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "trunk_growth"
 libraries = {
 "": SubResource("AnimationLibrary_u0545")
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -152)
 texture = ExtResource("2_b6iw6")
 hframes = 3
