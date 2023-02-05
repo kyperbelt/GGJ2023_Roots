@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dg55ohfumfff"]
 
 [ext_resource type="Script" path="res://src/vroot.gd" id="1_vh1ve"]
-[ext_resource type="Texture2D" uid="uid://818wfgqdd31q" path="res://image/Root (New)/Sapling/Root Walk Sprite.png" id="2_54g8k"]
+[ext_resource type="Texture2D" uid="uid://d22c3e585n3hl" path="res://image/Root (New)/Sapling/RootSpriteFix.png" id="2_wqcl2"]
 [ext_resource type="Texture2D" uid="uid://dtp8b0ij8we30" path="res://image/Root (New)/Sapling/root.png" id="3_ypy3k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bwcm"]
@@ -57,9 +57,9 @@ script = ExtResource("1_vh1ve")
 texture_filter = 1
 position = Vector2(5, -1)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_54g8k")
+texture = ExtResource("2_wqcl2")
 flip_h = true
-hframes = 3
+hframes = 4
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 texture_filter = 1

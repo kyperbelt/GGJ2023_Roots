@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dl7e3indhsfsi"
+path="res://.godot/imported/Sappling_FS_Cave_4.wav-1f458b221c4061cf9df9845c47ade0e4.sample"
+
+[deps]
+
+source_file="res://Sound/sfx/Sappling SFX/Sappling Footsteps/Sappling FS Cave/Sappling_FS_Cave_4.wav"
+dest_files=["res://.godot/imported/Sappling_FS_Cave_4.wav-1f458b221c4061cf9df9845c47ade0e4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cllgbjpp6a2ot"
+path="res://.godot/imported/Adult_Girl_FS_Wet_4.wav-7077cdd5a687e26ec90a4bfd1a03fd6b.sample"
+
+[deps]
+
+source_file="res://Sound/sfx/Girl SFX/Adult Girl SFX/Adult Girl Foot Steps Wet/Adult_Girl_FS_Wet_4.wav"
+dest_files=["res://.godot/imported/Adult_Girl_FS_Wet_4.wav-7077cdd5a687e26ec90a4bfd1a03fd6b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

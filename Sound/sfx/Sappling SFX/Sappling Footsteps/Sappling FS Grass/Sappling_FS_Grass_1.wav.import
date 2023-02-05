@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crwqljy36k2m5"
+path="res://.godot/imported/Sappling_FS_Grass_1.wav-9f37bb2b8b566d29cd76b757aaac54e9.sample"
+
+[deps]
+
+source_file="res://Sound/sfx/Sappling SFX/Sappling Footsteps/Sappling FS Grass/Sappling_FS_Grass_1.wav"
+dest_files=["res://.godot/imported/Sappling_FS_Grass_1.wav-9f37bb2b8b566d29cd76b757aaac54e9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
