@@ -7,7 +7,8 @@ enum States{
 	Growing, 
 	Flourish, 
 	Moving,
-	Falling
+	Falling,
+	Grappling
 }
 
 signal flourished(location: Vector2)
@@ -26,6 +27,7 @@ var growth_alpha :float = 0.0
 var _standing_still_elapsed:= 0.0
 
 var standing_still_alpha := 0.0
+
 @export
 var flourish_duration:= 1.0
 @export
@@ -46,7 +48,8 @@ var _state_map := {
 	States.Growing: GrowingState.new(),
 	States.Flourish: FlourishState.new(),
 	States.Moving: MovingState.new(),
-	States.Falling: FallingState.new()
+	States.Falling: FallingState.new(),
+	States.Grappling : GrapplingState.new()
 }
 
 @onready
@@ -55,6 +58,9 @@ var animation_player := $AnimationPlayer
 @onready
 var _grass_step_sounds:= $GrassStepSounds
 var current := 0
+
+@onready
+var grapple := $root_grapple
 
 func _ready():
 	add_to_group("player")
@@ -65,41 +71,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += _gravity * delta
 
-	# # Handle Jump.
-	# if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	# 	velocity.y = JUMP_VELOCITY
-
-	# if Input.is_action_pressed("move_down"):
-	# 	_standing_still_elapsed += delta
-	# 	print("rooting")
-	# else: 
-	#  _standing_still_elapsed  = 0.0
-
 	_standing_still_elapsed = clamp(_standing_still_elapsed, 0, _standing_still_max)
 	standing_still_alpha = _standing_still_elapsed/_standing_still_max
 	var progress_bar : TextureProgressBar = $ProgressBar
 	progress_bar.value = standing_still_alpha * progress_bar.max_value
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	# var direction = Input.get_axis("move_left", "move_right")
-	# if direction:
-	# 	$icon.flip_h = direction < 0
-	# 	var cur_scale = progress_bar.scale.x
-	# 	progress_bar.scale.x *= -1 if ($icon.flip_h && cur_scale > 0  )|| (!$icon.flip_h && cur_scale < 0) else 1
-	# 	var rooted := false
-	# 	if standing_still_alpha > 0: 
-	# 		rooted = true
-		
-	# 	if !rooted:
-	# 		velocity.x = direction * SPEED #(1.0 - get_movement_multiplier(_standing_still_elapsed/standing_still_max))
-	# else:
-	# 	velocity.x = move_toward(velocity.x, 0, SPEED)
-
-
-	# if velocity.x == 0:
-	# 	animation_player.play("RESET")
-	# else: 
-	# 	animation_player.play("move")
 		
 	if _current_state:
 		_current_state.update(delta)
