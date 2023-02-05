@@ -3,11 +3,12 @@
 [ext_resource type="Script" path="res://src/flourish_platform.gd" id="1_xjr6p"]
 [ext_resource type="Texture2D" uid="uid://cqy0ea4daa3v0" path="res://image/Root (New)/Tree/Tree Growth/Treetop.png" id="2_7dt0l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gljdx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4ie2"]
 size = Vector2(178, 37)
 
 [node name="flourish_platform" type="StaticBody2D"]
 script = ExtResource("1_xjr6p")
+max_duration = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9, 12)
@@ -17,4 +18,4 @@ region_rect = Rect2(524, 129, 234, 186)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 14.5)
-shape = SubResource("RectangleShape2D_gljdx")
+shape = SubResource("RectangleShape2D_p4ie2")
