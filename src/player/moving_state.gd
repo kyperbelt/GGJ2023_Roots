@@ -18,6 +18,11 @@ func update(_delta : float):
     if !_player.is_on_floor():
         _player.set_state(Vroot.States.Falling)
         return
+
+    if Input.is_action_pressed("grapple"):
+        _player.set_state(Vroot.States.Grappling)
+        return
+
     var direction = Input.get_axis("move_left", "move_right")
     step_timer += _delta
     if step_timer > step_interval:

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/tree_growth.gd" id="1_wh7gl"]
 [ext_resource type="Texture2D" uid="uid://n5hdu4vus8ip" path="res://image/Root (New)/Tree/Tree Growth/tiledtrunkbottom.png" id="2_3qsk5"]
 
-[sub_resource type="Animation" id="Animation_ehc5j"]
+[sub_resource type="Animation" id="Animation_whfaj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,7 +31,7 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_vfnov"]
+[sub_resource type="Animation" id="Animation_7whn5"]
 resource_name = "growth"
 loop_mode = 2
 tracks/0/type = "value"
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "values": [Rect2(0, 0, 73.248, 10), Rect2(0, 0, 73.248, 200)]
 }
 
-[sub_resource type="Animation" id="Animation_1vy1h"]
+[sub_resource type="Animation" id="Animation_nya5r"]
 resource_name = "trunk1"
 length = 0.25
 step = 0.18
@@ -64,7 +64,7 @@ tracks/0/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_e085p"]
+[sub_resource type="Animation" id="Animation_6tpmk"]
 resource_name = "trunk_growth"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -115,12 +115,12 @@ tracks/3/keys = {
 "values": [Vector2(0, 0), Vector2(1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0545"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7jyh"]
 _data = {
-"RESET": SubResource("Animation_ehc5j"),
-"growth": SubResource("Animation_vfnov"),
-"trunk1": SubResource("Animation_1vy1h"),
-"trunk_growth": SubResource("Animation_e085p")
+"RESET": SubResource("Animation_whfaj"),
+"growth": SubResource("Animation_7whn5"),
+"trunk1": SubResource("Animation_nya5r"),
+"trunk_growth": SubResource("Animation_6tpmk")
 }
 
 [node name="tree_growth" type="Node2D"]
@@ -141,7 +141,7 @@ region_rect = Rect2(0, 0, 73.248, 10)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "trunk_growth"
 libraries = {
-"": SubResource("AnimationLibrary_u0545")
+"": SubResource("AnimationLibrary_p7jyh")
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
