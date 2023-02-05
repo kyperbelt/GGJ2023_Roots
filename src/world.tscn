@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7kshcjigx0tq"]
+[gd_scene load_steps=6 format=3 uid="uid://c7kshcjigx0tq"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_jkfy3"]
 [ext_resource type="Texture2D" uid="uid://6d6gy4mckami" path="res://image/Groundtiles.png" id="1_okkbb"]
 [ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
+[ext_resource type="Texture2D" uid="uid://3vnqwt0n3oom" path="res://image/Root (New)/Sapling/backgroundFirstLevel.png" id="4_plweu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0m5"]
 size = Vector2(244, 20)
@@ -26,3 +27,13 @@ shape = SubResource("RectangleShape2D_1l0m5")
 
 [node name="root" parent="." instance=ExtResource("2_xnflr")]
 texture_filter = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.453516, 0.457639)
+texture = ExtResource("4_plweu")
+centered = false
