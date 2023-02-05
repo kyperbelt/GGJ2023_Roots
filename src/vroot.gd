@@ -18,6 +18,9 @@ signal growth_finished
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@onready
+var camera := $Camera2D
+
 # Get the _gravity from the project settings to be synced with RigidBody nodes.
 var _gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 

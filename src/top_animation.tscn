@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbakc05cx5hwd"]
+[gd_scene load_steps=5 format=3 uid="uid://w0etn0nvc0qg"]
 
-[ext_resource type="Texture2D" uid="uid://cqy0ea4daa3v0" path="res://image/Root (New)/Tree/Tree Growth/Treetop.png" id="1_6t0dm"]
+[ext_resource type="Texture2D" uid="uid://bsskw2pfkh5gg" path="res://image/Root (New)/Tree/Tree Growth/Treetop.png" id="1_6t0dm"]
 
 [sub_resource type="Animation" id="Animation_kj8ip"]
 length = 0.001
