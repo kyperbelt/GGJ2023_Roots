@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://ei40q0groy0p"
+=======
 uid="uid://cy6wwd5x6p5r5"
+>>>>>>> main
 path="res://.godot/imported/SaplingRootingCentered.png-fc7c4206b1a1dea3a738527ea344bf2d.ctex"
 metadata={
 "vram_texture": false

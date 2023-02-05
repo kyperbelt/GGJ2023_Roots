@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy6wwd5x6p5r5"
-path="res://.godot/imported/SaplingRootingCentered.png-fc7c4206b1a1dea3a738527ea344bf2d.ctex"
+uid="uid://wugkwbkf8k3a"
+path="res://.godot/imported/FirstStageTogether.png-9f83512b489a596d2dfd0426424bf548.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Root (New)/Sapling/SaplingRootingCentered.png"
-dest_files=["res://.godot/imported/SaplingRootingCentered.png-fc7c4206b1a1dea3a738527ea344bf2d.ctex"]
+source_file="res://image/Root (New)/Tree/Tree Growth/FirstStageTogether.png"
+dest_files=["res://.godot/imported/FirstStageTogether.png-9f83512b489a596d2dfd0426424bf548.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy6wwd5x6p5r5"
-path="res://.godot/imported/SaplingRootingCentered.png-fc7c4206b1a1dea3a738527ea344bf2d.ctex"
+uid="uid://88qtyugbhy1g"
+path="res://.godot/imported/little girl ruinning sprite.png-bb113c93bbf1f7772a6f58493b0c7541.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Root (New)/Sapling/SaplingRootingCentered.png"
-dest_files=["res://.godot/imported/SaplingRootingCentered.png-fc7c4206b1a1dea3a738527ea344bf2d.ctex"]
+source_file="res://image/Girl/Small Girl/little girl ruinning sprite.png"
+dest_files=["res://.godot/imported/little girl ruinning sprite.png-bb113c93bbf1f7772a6f58493b0c7541.ctex"]
 
 [params]
 

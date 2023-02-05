@@ -2,9 +2,10 @@ extends Node2D
 
 class_name SappyWorld
 
-
 signal wind_started(wind_velocity)
 signal wind_ended()
+
+var floursih_platform: PackedScene = preload("res://src/flourish_platform.tscn")
 
 @export
 var _wind_velocity:= 0.0
@@ -16,6 +17,7 @@ var is_windy := false
 
 func _ready():		
 	var vroot = get_tree().get_nodes_in_group("player")[0]
+	vroot.flourished.connect(flourish_platform)
 	print(vroot)
 	var err = wind_started.connect(vroot.set_wind, CONNECT_DEFERRED)
 	if (err != OK):
@@ -42,3 +44,10 @@ func set_windy(windy := false):
 		wind_started.emit(_wind_velocity)
 	else:
 		wind_ended.emit()
+
+
+func flourish_platform(position: Vector2):
+	var platform = floursih_platform.instantiate()
+	add_child(platform)
+	platform.position = position	
+
