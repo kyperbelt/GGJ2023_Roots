@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dxb1dydpdwtj2" path="res://Sound/sfx/Ambient SFX/Ambience_Forest.wav" id="5_3ramy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0m5"]
-size = Vector2(244, 20)
+size = Vector2(975, 30)
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_jkfy3")
@@ -19,23 +19,26 @@ position = Vector2(1, 142)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
 texture_filter = 1
-position = Vector2(0.500004, 5.5)
-scale = Vector2(5.10417, 1.03125)
+position = Vector2(363.5, 115.5)
+scale = Vector2(20.2292, 7.90625)
 texture = ExtResource("1_okkbb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(365.5, 5)
 shape = SubResource("RectangleShape2D_1l0m5")
 
 [node name="root" parent="." instance=ExtResource("2_xnflr")]
 texture_filter = 1
+max_height = 300
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(0.453516, 0.457639)
 texture = ExtResource("4_plweu")
 centered = false
 

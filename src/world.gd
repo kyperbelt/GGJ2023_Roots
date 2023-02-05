@@ -6,6 +6,7 @@ signal wind_started(wind_velocity)
 signal wind_ended()
 
 var floursih_platform: PackedScene = preload("res://src/flourish_platform.tscn")
+var growth_animation: PackedScene = preload("res://src/tree_growth.tscn")
 
 @export
 var _wind_velocity:= 0.0
@@ -15,11 +16,18 @@ var wind_duration := 1.0
 var wind_elapsed := 0.0
 var is_windy := false
 
+var tree_animation: AnimationPlayer
+var tree
+var player : Vroot
+
 func _ready():		
 	var vroot = get_tree().get_nodes_in_group("player")[0]
 	vroot.flourished.connect(flourish_platform)
 	vroot.growth_started.connect(grow_start)
 	vroot.growth_finished.connect(grow_finished)
+
+	player = vroot
+
 
 	print(vroot)
 	var err = wind_started.connect(vroot.set_wind, CONNECT_DEFERRED)
@@ -49,13 +57,24 @@ func set_windy(windy := false):
 		wind_ended.emit()
 
 
-func flourish_platform(position: Vector2):
+func flourish_platform(position_passed: Vector2):
 	var platform = floursih_platform.instantiate()
+	platform.z_index = -1
 	add_child(platform)
-	platform.position = position	
+	tree.on_animation_finished()
+	platform.position = position_passed
 
 func grow_start():
 	print("grow start")
+	tree = growth_animation.instantiate()
+	var animation_player = tree.get_node("AnimationPlayer")
+	tree.z_index = 1
+	tree.position = player.position
+	add_child(tree)
+	animation_player.play("trunk_growth")
+	tree_animation = animation_player
+	tree_animation.speed_scale /= player._standing_still_max
 
 func grow_finished():
 	print("grow end")
+	tree_animation.pause()

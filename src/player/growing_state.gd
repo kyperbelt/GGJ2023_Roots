@@ -6,6 +6,7 @@ func enter(player: Vroot):
 	super.enter(player)
 	_player.initial_growth_y = _player.position.y
 	_player.get_node("RootSound").play()
+	_player.growth_started.emit()
 	print("entering growing state")
 
 
@@ -24,6 +25,7 @@ func update(delta: float):
 		_player.growth_alpha = clamp(_player.standing_still_alpha, 0, 1)
 		_player._standing_still_elapsed = 0
 		_player.set_state(_player.States.Flourish)
+		_player.growth_finished.emit()
 
 
 
