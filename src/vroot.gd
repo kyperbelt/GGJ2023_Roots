@@ -32,6 +32,8 @@ var _standing_still_elapsed:= 0.0
 var standing_still_alpha := 0.0
 
 @export
+var step_latency := 0.2
+@export
 var flourish_duration:= 1.0
 @export
 var max_height := 100

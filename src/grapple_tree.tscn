@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg6i54rerrbfb"]
+
+[ext_resource type="Texture2D" uid="uid://h42bowhhg2o5" path="res://image/grappletree.png" id="1_kp732"]
+[ext_resource type="Texture2D" uid="uid://c3ukaxobcbold" path="res://image/grapple.png" id="2_42if4"]
+
+[sub_resource type="Animation" id="Animation_xw6h6"]
+resource_name = "grapple_shake"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5lxj"]
+_data = {
+"grapple_shake": SubResource("Animation_xw6h6")
+}
+
+[node name="grapple_tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kp732")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-210, -85)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+texture = ExtResource("2_42if4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_o5lxj")
+}

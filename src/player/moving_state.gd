@@ -5,6 +5,8 @@ class_name MovingState
 var step_interval = 0.2
 var step_timer = 0.0
 
+var _step_latency_elapsed := 0.0 
+
 func enter(player: Vroot):
     super.enter(player)
     _player.animation_player.play("move")
@@ -16,8 +18,14 @@ func update(_delta : float):
         _player.set_state(Vroot.States.Idle)
         return
     if !_player.is_on_floor():
-        _player.set_state(Vroot.States.Falling)
-        return
+        _step_latency_elapsed += _delta
+        if (_step_latency_elapsed > _player.step_latency):
+            _step_latency_elapsed = 0.0
+            _player.set_state(Vroot.States.Falling)
+            return
+    else:
+        _step_latency_elapsed = 0.0
+    
 
     if Input.is_action_pressed("grapple"):
         _player.set_state(Vroot.States.Grappling)
