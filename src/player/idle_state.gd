@@ -12,6 +12,10 @@ func update(_delta: float):
         _player.set_state(Vroot.States.Growing)
         return
 
+    if Input.is_action_pressed("grapple"):
+        _player.set_state(Vroot.States.Grappling)
+        return 
+
     var direction = Input.get_axis("move_left", "move_right")
     if direction != 0:
         _player.set_state(Vroot.States.Moving)

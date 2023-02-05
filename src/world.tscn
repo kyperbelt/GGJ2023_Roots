@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7kshcjigx0tq"]
+[gd_scene load_steps=7 format=3 uid="uid://c7kshcjigx0tq"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_jkfy3"]
 [ext_resource type="Texture2D" uid="uid://6d6gy4mckami" path="res://image/Groundtiles.png" id="1_okkbb"]
 [ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
+[ext_resource type="Texture2D" uid="uid://bo5im25mt0oh4" path="res://image/Root (New)/Sapling/backgroundFirstLevel.png" id="4_plweu"]
+[ext_resource type="AudioStream" uid="uid://dxb1dydpdwtj2" path="res://Sound/sfx/Ambient SFX/Ambience_Forest.wav" id="5_3ramy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0m5"]
-size = Vector2(244, 20)
+size = Vector2(975, 30)
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_jkfy3")
@@ -14,15 +16,34 @@ wind_duration = 2.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(1, 142)
+collision_layer = 4
+collision_mask = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
 texture_filter = 1
-position = Vector2(0.500004, 5.5)
-scale = Vector2(5.10417, 1.03125)
+position = Vector2(363.5, 115.5)
+scale = Vector2(20.2292, 7.90625)
 texture = ExtResource("1_okkbb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(365.5, 5)
 shape = SubResource("RectangleShape2D_1l0m5")
 
 [node name="root" parent="." instance=ExtResource("2_xnflr")]
 texture_filter = 1
+max_height = 300
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("4_plweu")
+centered = false
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3ramy")
+autoplay = true
