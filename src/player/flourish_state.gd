@@ -5,6 +5,7 @@ class_name FlourishState
 var flourish_elapsed : float= 0
 
 func enter(player: Vroot):
+    player.get_node("SproutSound").play()
     super.enter(player)
     print("Flourish")
 

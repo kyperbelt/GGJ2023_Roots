@@ -18,6 +18,9 @@ var is_windy := false
 func _ready():		
 	var vroot = get_tree().get_nodes_in_group("player")[0]
 	vroot.flourished.connect(flourish_platform)
+	vroot.growth_started.connect(grow_start)
+	vroot.growth_finished.connect(grow_finished)
+
 	print(vroot)
 	var err = wind_started.connect(vroot.set_wind, CONNECT_DEFERRED)
 	if (err != OK):
@@ -51,3 +54,8 @@ func flourish_platform(position: Vector2):
 	add_child(platform)
 	platform.position = position	
 
+func grow_start():
+	print("grow start")
+
+func grow_finished():
+	print("grow end")

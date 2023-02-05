@@ -5,6 +5,7 @@ class_name GrowingState
 func enter(player: Vroot):
 	super.enter(player)
 	_player.initial_growth_y = _player.position.y
+	_player.get_node("RootSound").play()
 	print("entering growing state")
 
 

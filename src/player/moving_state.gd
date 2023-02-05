@@ -2,10 +2,13 @@ extends State
 
 class_name MovingState
 
+var step_interval = 0.2
+var step_timer = 0.0
 
 func enter(player: Vroot):
     super.enter(player)
     _player.animation_player.play("move")
+    _player.play_step_sound()
 
 func update(_delta : float):
     if Input.is_action_just_pressed("move_down"):
@@ -16,6 +19,10 @@ func update(_delta : float):
         _player.set_state(Vroot.States.Falling)
         return
     var direction = Input.get_axis("move_left", "move_right")
+    step_timer += _delta
+    if step_timer > step_interval:
+        step_timer = 0.0
+        _player.play_step_sound()
     if direction:
         var icon:Sprite2D = _player.get_node("icon")
         icon.flip_h = direction < 0

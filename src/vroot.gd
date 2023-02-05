@@ -11,6 +11,8 @@ enum States{
 }
 
 signal flourished(location: Vector2)
+signal growth_started
+signal growth_finished
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -49,6 +51,10 @@ var _state_map := {
 
 @onready
 var animation_player := $AnimationPlayer
+
+@onready
+var _grass_step_sounds:= $GrassStepSounds
+var current := 0
 
 func _ready():
 	add_to_group("player")
@@ -114,3 +120,8 @@ func set_wind(wind: float):
 	print("wind was set to " + str(wind) + "")
 	_wind = wind
 
+func play_step_sound():
+	if current >= _grass_step_sounds.get_child_count():
+		current = 0
+	_grass_step_sounds.get_child(current).play()
+	current += 1

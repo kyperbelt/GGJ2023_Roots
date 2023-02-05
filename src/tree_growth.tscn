@@ -1,23 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4jwercthf2jv"]
+[gd_scene load_steps=8 format=3 uid="uid://c0yd6ahsto7oc"]
 
 [ext_resource type="Texture2D" uid="uid://cppljyrg27kbo" path="res://image/Root (New)/Tree/Tree Growth/tiledtrunk.png" id="1_cs0u6"]
-[ext_resource type="Texture2D" uid="uid://bha2rpooado5f" path="res://image/Root (New)/Tree/Tree Growth/Trunk.png" id="2_b6iw6"]
-
-[sub_resource type="Animation" id="Animation_vfnov"]
-resource_name = "growth"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("trunk_center:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1.31951),
-"update": 0,
-"values": [Rect2(0, 0, 73.248, 10), Rect2(0, 0, 73.248, 200)]
-}
+[ext_resource type="Texture2D" uid="uid://3fxxy430hbby" path="res://image/Root (New)/Tree/Tree Growth/Trunk.png" id="2_b6iw6"]
 
 [sub_resource type="Animation" id="Animation_ehc5j"]
 length = 0.001
@@ -46,6 +30,22 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_vfnov"]
+resource_name = "growth"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trunk_center:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1.31951),
+"update": 0,
+"values": [Rect2(0, 0, 73.248, 10), Rect2(0, 0, 73.248, 200)]
+}
+
 [sub_resource type="Animation" id="Animation_1vy1h"]
 resource_name = "trunk1"
 length = 0.25
@@ -65,7 +65,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_e085p"]
 resource_name = "trunk_growth"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
