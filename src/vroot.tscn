@@ -94,7 +94,7 @@ offset_bottom = -68.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_right = 2525
+limit_right = 5050
 limit_bottom = 1425
 limit_smoothed = true
 
