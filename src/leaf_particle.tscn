@@ -5,7 +5,6 @@
 [sub_resource type="Animation" id="Animation_0jcfh"]
 resource_name = "blowing"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -42,6 +41,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, -1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 800)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5shq5"]
 _data = {
@@ -51,10 +62,9 @@ _data = {
 [node name="leaf_particle" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 2.18388
-scale = Vector2(1, -0.925036)
-skew = 0.0360622
+skew = -0.383972
 texture = ExtResource("1_nc3g0")
+flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
