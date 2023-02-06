@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://njmvs0g3pot8" path="res://Sound/sfx/Sappling SFX/Sappling Footsteps/Sappling FS Grass/Sappling_FS_Grass_5.wav" id="8_h3nl3"]
 [ext_resource type="AudioStream" uid="uid://bhhykd0nm6tw" path="res://Sound/sfx/Sappling SFX/Sappling_Root_SFX/Sappling_Root_SFX.wav" id="9_1hx6o"]
 [ext_resource type="AudioStream" uid="uid://c4p04f0rdfa8g" path="res://Sound/sfx/Sappling SFX/Sappling_Root_SFX/Sappling_Sprout_SFX.wav" id="10_gfpay"]
-[ext_resource type="PackedScene" uid="uid://b7ljmjt7rocd4" path="res://src/player/root_grapple.tscn" id="11_05m54"]
+[ext_resource type="PackedScene" uid="uid://0jjbl5ujwtl7" path="res://src/player/root_grapple.tscn" id="11_05m54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bwcm"]
 radius = 31.0
@@ -62,7 +62,9 @@ _data = {
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_vh1ve")
+flourish_duration = 0.5
 max_height = 400
+_standing_still_max = 2.0
 
 [node name="icon" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -92,7 +94,7 @@ offset_bottom = -68.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_right = 2525
+limit_right = 5050
 limit_bottom = 1425
 limit_smoothed = true
 

@@ -66,6 +66,7 @@ var current := 0
 
 @onready
 var grapple := $root_grapple
+var pressed_position:Vector2
 
 func _ready():
 	add_to_group("player")
