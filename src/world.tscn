@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c7kshcjigx0tq"]
+[gd_scene load_steps=29 format=3 uid="uid://c7kshcjigx0tq"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_jkfy3"]
 [ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dvih4x7ppmco2" path="res://image/levelOneRock2.png" id="7_ksn3q"]
 [ext_resource type="Texture2D" uid="uid://b3mf5urdm88fy" path="res://image/levelOneRock3.png" id="8_xqqe2"]
 [ext_resource type="Texture2D" uid="uid://cfjuk733gj358" path="res://image/TitleScreen/Leaf_Icon.png" id="10_7jaqa"]
+[ext_resource type="PackedScene" uid="uid://dk0k1h7na8m1x" path="res://src/girl/little_girl.tscn" id="12_fnjvl"]
 [ext_resource type="Texture2D" uid="uid://b23wyfg3mutvj" path="res://image/Root (New)/Foreground/FG grass.png" id="13_p0hdq"]
 [ext_resource type="Texture2D" uid="uid://4gi65leh4mh3" path="res://image/Root (New)/Foreground/FG round leave stems.png" id="14_juut6"]
 [ext_resource type="Texture2D" uid="uid://cq548rp1xsqpx" path="res://image/Root (New)/Foreground/FG swamp combo.png" id="15_r1f00"]
@@ -233,6 +234,9 @@ texture = ExtResource("10_7jaqa")
 lifetime = 107.66
 randomness = 1.0
 visibility_rect = Rect2(-100, -100, 200, 1000)
+
+[node name="little_girl" parent="." instance=ExtResource("12_fnjvl")]
+position = Vector2(4875, 1292)
 
 [node name="Foreground" type="ParallaxBackground" parent="."]
 layer = 100
