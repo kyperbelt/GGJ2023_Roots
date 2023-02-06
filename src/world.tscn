@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c7kshcjigx0tq"]
+[gd_scene load_steps=28 format=3 uid="uid://c7kshcjigx0tq"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_jkfy3"]
 [ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dvih4x7ppmco2" path="res://image/levelOneRock2.png" id="7_ksn3q"]
 [ext_resource type="Texture2D" uid="uid://b3mf5urdm88fy" path="res://image/levelOneRock3.png" id="8_xqqe2"]
 [ext_resource type="Texture2D" uid="uid://cfjuk733gj358" path="res://image/TitleScreen/Leaf_Icon.png" id="10_7jaqa"]
+[ext_resource type="Texture2D" uid="uid://b23wyfg3mutvj" path="res://image/Root (New)/Foreground/FG grass.png" id="13_p0hdq"]
+[ext_resource type="Texture2D" uid="uid://4gi65leh4mh3" path="res://image/Root (New)/Foreground/FG round leave stems.png" id="14_juut6"]
+[ext_resource type="Texture2D" uid="uid://cq548rp1xsqpx" path="res://image/Root (New)/Foreground/FG swamp combo.png" id="15_r1f00"]
+[ext_resource type="AudioStream" uid="uid://cis002tg7so1k" path="res://Sound/musix/Sappling Forest Music.wav" id="16_8kudv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhv7s"]
 size = Vector2(812.5, 604.5)
@@ -68,9 +72,9 @@ _wind_velocity = 100.0
 wind_duration = 2.0
 
 [node name="grapple_tree" parent="." instance=ExtResource("7_gwel1")]
-position = Vector2(2434, 780)
+position = Vector2(2434, 804)
 
-[node name="Cottage" type="StaticBody2D" parent="."]
+[node name="Cottage" type="Area2D" parent="."]
 position = Vector2(4832, 1181)
 scale = Vector2(0.5, 0.5)
 
@@ -146,6 +150,7 @@ region_rect = Rect2(0, 0, 2560, 720)
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3ramy")
+volume_db = -3.0
 autoplay = true
 
 [node name="BigRockSummer" type="StaticBody2D" parent="."]
@@ -231,11 +236,112 @@ visibility_rect = Rect2(-100, -100, 200, 1000)
 
 [node name="Foreground" type="ParallaxBackground" parent="."]
 layer = 100
-scroll_ignore_camera_zoom = true
+follow_viewport_enabled = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Foreground"]
-motion_scale = Vector2(-0.5, -0.5)
+motion_scale = Vector2(0.5, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground/ParallaxLayer"]
-position = Vector2(171, 576)
+position = Vector2(83, 1372)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(2860, 1367)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(2274, 1373)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(637, 1274)
+texture = ExtResource("13_p0hdq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(3827, 1274)
+texture = ExtResource("13_p0hdq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(1146, 1367)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(1879, 1372)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(3375, 1376)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(1590, 1340)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(4422, 1347)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(3099, 1341)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(4159.8, 1372)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(6936.8, 1367)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(6350.8, 1373)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(4713.8, 1274)
+texture = ExtResource("13_p0hdq")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(7903.8, 1274)
+texture = ExtResource("13_p0hdq")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(5222.8, 1367)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(5955.8, 1372)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(7451.8, 1376)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(5666.8, 1340)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(8498.8, 1347)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(7175.8, 1341)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_8kudv")
+volume_db = -2.0
+autoplay = true
