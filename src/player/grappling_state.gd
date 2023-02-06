@@ -14,7 +14,7 @@ func enter(player: Vroot):
 	grapple.shoot(_player.to_local(mouse_pos))
 	# print("position: ", mouse_pos)
 
-	pass
+
 
 func update(delta: float):
 	if !Input.is_action_pressed("grapple"):
