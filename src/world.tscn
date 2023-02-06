@@ -1,15 +1,24 @@
-[gd_scene load_steps=21 format=3 uid="uid://c7kshcjigx0tq"]
+[gd_scene load_steps=28 format=3 uid="uid://c7kshcjigx0tq"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_jkfy3"]
 [ext_resource type="PackedScene" uid="uid://dg55ohfumfff" path="res://src/vroot.tscn" id="2_xnflr"]
+[ext_resource type="Texture2D" uid="uid://cmatlawk24app" path="res://image/Cottage/cottage.png" id="3_pet7q"]
 [ext_resource type="Texture2D" uid="uid://bo5im25mt0oh4" path="res://image/Root (New)/Sapling/backgroundFirstLevel.png" id="4_plweu"]
 [ext_resource type="AudioStream" uid="uid://dxb1dydpdwtj2" path="res://Sound/sfx/Ambient SFX/Ambience_Forest.wav" id="5_3ramy"]
 [ext_resource type="Texture2D" uid="uid://cs4wbpad7pwr1" path="res://image/midgroundFirstLevel.png" id="5_hmkff"]
 [ext_resource type="Texture2D" uid="uid://dsp2yfl8ji7ms" path="res://image/levelOneRock1.png" id="6_a48xi"]
+[ext_resource type="Texture2D" uid="uid://bsyru7dq6nrb7" path="res://image/Root (New)/Foreground/FG bushes.png" id="7_7wgd3"]
 [ext_resource type="PackedScene" uid="uid://cg6i54rerrbfb" path="res://src/grapple_tree.tscn" id="7_gwel1"]
 [ext_resource type="Texture2D" uid="uid://dvih4x7ppmco2" path="res://image/levelOneRock2.png" id="7_ksn3q"]
 [ext_resource type="Texture2D" uid="uid://b3mf5urdm88fy" path="res://image/levelOneRock3.png" id="8_xqqe2"]
 [ext_resource type="Texture2D" uid="uid://cfjuk733gj358" path="res://image/TitleScreen/Leaf_Icon.png" id="10_7jaqa"]
+[ext_resource type="Texture2D" uid="uid://b23wyfg3mutvj" path="res://image/Root (New)/Foreground/FG grass.png" id="13_p0hdq"]
+[ext_resource type="Texture2D" uid="uid://4gi65leh4mh3" path="res://image/Root (New)/Foreground/FG round leave stems.png" id="14_juut6"]
+[ext_resource type="Texture2D" uid="uid://cq548rp1xsqpx" path="res://image/Root (New)/Foreground/FG swamp combo.png" id="15_r1f00"]
+[ext_resource type="AudioStream" uid="uid://cis002tg7so1k" path="res://Sound/musix/Sappling Forest Music.wav" id="16_8kudv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhv7s"]
+size = Vector2(812.5, 604.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8t71k"]
 size = Vector2(141, 792.5)
@@ -62,6 +71,20 @@ script = ExtResource("1_jkfy3")
 _wind_velocity = 100.0
 wind_duration = 2.0
 
+[node name="grapple_tree" parent="." instance=ExtResource("7_gwel1")]
+position = Vector2(2434, 804)
+
+[node name="Cottage" type="Area2D" parent="."]
+position = Vector2(4832, 1181)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cottage"]
+texture = ExtResource("3_pet7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cottage"]
+position = Vector2(-8.25, 23.25)
+shape = SubResource("RectangleShape2D_yhv7s")
+
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(123, 1264)
 collision_layer = 4
@@ -83,19 +106,15 @@ region_rect = Rect2(0, 0, 2560, 720)
 position = Vector2(-195, -220.75)
 shape = SubResource("RectangleShape2D_8t71k")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
-position = Vector2(2495, -227)
-shape = SubResource("RectangleShape2D_8t71k")
-
 [node name="Floor2" type="StaticBody2D" parent="."]
-position = Vector2(4942, 1267)
+position = Vector2(4971, 1264)
 scale = Vector2(-1, 1)
 collision_layer = 4
 collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor2"]
 position = Vector2(-131, 67)
-polygon = PackedVector2Array(-5, 3, 27, -12, 61, -8, 81.5383, 4.02249, 102, 16, 141, 18, 179, 17, 214, 14, 246.658, 12.9794, 278, 12, 310.616, 7.86557, 349, 3, 370, -2, 397, 3, 427, 10, 452, 7, 475.669, 7, 500, 7, 521.22, 2.62122, 543.009, -1.87488, 563, -6, 556, -42, 566, -60, 588.259, -65.5648, 614, -72, 639.48, -73.0617, 662, -74, 685.427, -72.5358, 710, -71, 746, -62, 769.519, -63.3066, 794.137, -64.6743, 815.336, -65.852, 836, -67, 857.432, -68.786, 878.705, -70.5588, 902.114, -72.5096, 932, -75, 967, -106, 993, -123, 1071.61, -138.264, 1096, -143, 1126.17, -149.129, 1160, -156, 1194.14, -163.587, 1223, -170, 1251.88, -177.601, 1280, -185, 1301.25, -193.971, 1325, -204, 1353.8, -206.618, 1380, -209, 1414, -207, 1441, -187, 1451, -146, 1444, -119, 1402, -101, 1362, -82, 1337, -65, 1337, -31, 1348, 6, 1378, 38, 1413, 66, 1451, 72, 1556, 81, 1636, 80, 1747, 81, 1799, 83, 1851, 83, 1891, 80, 1935, 73, 1984, 63, 2044, -44, 2068, -107, 2089, -162, 2101, -192, 2116, -229, 2131, -329, 2162, -293, 2205, -298, 2262, -292, 2288, -291, 2307, -302, 2377, -301, 2433, -306, 2477, -298, 2515, -298, 2553, -294, 2554, -269, 2553, 37, 2554, 102, 1956, 98, 1222, 99, 503, 98, -5, 100)
+polygon = PackedVector2Array(-5, 3, 27, -12, 61, -8, 81.5383, 4.02249, 102, 16, 141, 18, 179, 17, 214, 14, 246.658, 12.9794, 278, 12, 310.616, 7.86557, 349, 3, 370, -2, 397, 3, 427, 10, 452, 7, 475.669, 7, 500, 7, 521.22, 2.62122, 543.009, -1.87488, 563, -6, 556, -42, 566, -60, 588.259, -65.5648, 614, -72, 639.48, -73.0617, 662, -74, 685.427, -72.5358, 710, -71, 746, -62, 769.519, -63.3066, 794.137, -64.6743, 815.336, -65.852, 836, -67, 857.432, -68.786, 878.705, -70.5588, 902.114, -72.5096, 932, -75, 967, -106, 993, -123, 1071.61, -138.264, 1096, -143, 1126.17, -149.129, 1160, -156, 1194.14, -163.587, 1223, -170, 1251.88, -177.601, 1280, -185, 1301.25, -193.971, 1325, -204, 1353.8, -206.618, 1380, -209, 1414, -207, 1441, -187, 1451, -146, 1444, -119, 1402, -101, 1362, -82, 1337, -65, 1337, -31, 1348, 6, 1378, 38, 1413, 66, 1451, 72, 1556, 81, 1636, 80, 1747, 81, 1794, 77, 1841, 68, 1881, 62, 1931, 52, 1991, 26, 2067, -33, 2126, -108, 2145, -176, 2134, -205, 2131, -234, 2148, -264, 2165, -284, 2205, -294, 2262, -292, 2288, -291, 2307, -302, 2377, -301, 2433, -306, 2477, -298, 2515, -298, 2559, -293, 2554, -269, 2553, 37, 2554, 102, 1956, 98, 1222, 99, 503, 98, -5, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor2"]
 texture_repeat = 3
@@ -107,10 +126,6 @@ region_rect = Rect2(0, 0, 2560, 720)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
 position = Vector2(-195, -220.75)
-shape = SubResource("RectangleShape2D_8t71k")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor2"]
-position = Vector2(2495, -227)
 shape = SubResource("RectangleShape2D_8t71k")
 
 [node name="root" parent="." instance=ExtResource("2_xnflr")]
@@ -135,6 +150,7 @@ region_rect = Rect2(0, 0, 2560, 720)
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3ramy")
+volume_db = -3.0
 autoplay = true
 
 [node name="BigRockSummer" type="StaticBody2D" parent="."]
@@ -181,23 +197,35 @@ shape = SubResource("CapsuleShape2D_rkahl")
 position = Vector2(441, 1319)
 shape = SubResource("CapsuleShape2D_t5mku")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(322, -91)
+[node name="Rock3Summer" type="StaticBody2D" parent="."]
+position = Vector2(-8, -33)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock3Summer"]
 position = Vector2(2186, 1013)
 shape = SubResource("CapsuleShape2D_7qdm6")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Rock3Summer"]
 position = Vector2(2216, 1017)
 texture = ExtResource("8_xqqe2")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Rock3Summer"]
 position = Vector2(2274, 1018)
 shape = SubResource("CapsuleShape2D_rdidg")
 
-[node name="grapple_tree" parent="." instance=ExtResource("7_gwel1")]
-position = Vector2(2329, 936)
+[node name="Rock3Summer2" type="StaticBody2D" parent="."]
+position = Vector2(2073, 226)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock3Summer2"]
+position = Vector2(2186, 1013)
+shape = SubResource("CapsuleShape2D_7qdm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rock3Summer2"]
+position = Vector2(2216, 1017)
+texture = ExtResource("8_xqqe2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Rock3Summer2"]
+position = Vector2(2274, 1018)
+shape = SubResource("CapsuleShape2D_rdidg")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 process_material = SubResource("ParticleProcessMaterial_v0jod")
@@ -205,3 +233,115 @@ texture = ExtResource("10_7jaqa")
 lifetime = 107.66
 randomness = 1.0
 visibility_rect = Rect2(-100, -100, 200, 1000)
+
+[node name="Foreground" type="ParallaxBackground" parent="."]
+layer = 100
+follow_viewport_enabled = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Foreground"]
+motion_scale = Vector2(0.5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(83, 1372)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(2860, 1367)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(2274, 1373)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(637, 1274)
+texture = ExtResource("13_p0hdq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(3827, 1274)
+texture = ExtResource("13_p0hdq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(1146, 1367)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(1879, 1372)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(3375, 1376)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(1590, 1340)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(4422, 1347)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(3099, 1341)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(4159.8, 1372)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(6936.8, 1367)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(6350.8, 1373)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_7wgd3")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(4713.8, 1274)
+texture = ExtResource("13_p0hdq")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(7903.8, 1274)
+texture = ExtResource("13_p0hdq")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(5222.8, 1367)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(5955.8, 1372)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(7451.8, 1376)
+texture = ExtResource("14_juut6")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(5666.8, 1340)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(8498.8, 1347)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(7175.8, 1341)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_r1f00")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_8kudv")
+volume_db = -2.0
+autoplay = true
