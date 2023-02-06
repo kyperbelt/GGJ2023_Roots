@@ -44,6 +44,7 @@ func _process(delta):
 	
 	if is_windy:
 		wind_elapsed += delta
+	
 		if (wind_elapsed >= wind_duration):
 			wind_elapsed = 0.0
 			set_windy(false)
