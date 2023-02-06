@@ -1,30 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtpghetm3s3xh"]
+[gd_scene load_steps=8 format=3 uid="uid://dtpghetm3s3xh"]
 
 [ext_resource type="Script" path="res://src/TitleScreen.gd" id="1_cxegp"]
+[ext_resource type="Texture2D" uid="uid://b2coyje71l56u" path="res://image/backgroundgroundFirstLevel.png" id="2_a1e4j"]
 [ext_resource type="Texture2D" uid="uid://cfjuk733gj358" path="res://image/TitleScreen/Leaf_Icon.png" id="2_frns0"]
 [ext_resource type="Texture2D" uid="uid://eenmn3i3bx0k" path="res://image/TitleScreen/WoodIconDoorNormal.png" id="3_ufkna"]
+[ext_resource type="Texture2D" uid="uid://ddsar2i2vuyf1" path="res://image/TitleScreen/saplingstem.png" id="4_1pu8s"]
 [ext_resource type="Texture2D" uid="uid://bscah405fiqln" path="res://image/TitleScreen/WoodIconDoorPressed.png" id="4_id2js"]
+[ext_resource type="PackedScene" uid="uid://bbcc6aaxi123m" path="res://src/leaf_particle.tscn" id="6_6oc8v"]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_cxegp")
 
+[node name="TextureRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(287, 302)
+texture = ExtResource("2_a1e4j")
 
 [node name="Logo" type="Sprite2D" parent="."]
-
-[node name="start_texture_button" type="TextureButton" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 384.0
-offset_top = 120.0
-offset_right = 984.0
-offset_bottom = 720.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.65, 0.65)
-texture_normal = ExtResource("2_frns0")
-stretch_mode = 0
 
 [node name="Exit" type="TextureButton" parent="."]
 offset_left = 2.0
@@ -36,5 +33,29 @@ size_flags_stretch_ratio = 0.0
 texture_normal = ExtResource("3_ufkna")
 texture_pressed = ExtResource("4_id2js")
 
-[connection signal="pressed" from="start_texture_button" to="." method="_on_start_texture_button_pressed"]
+[node name="stem" type="Sprite2D" parent="."]
+position = Vector2(497, 428)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_1pu8s")
+
+[node name="start_texture_button" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 448.0
+offset_top = 119.0
+offset_right = 1048.0
+offset_bottom = 719.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.65, 0.65)
+texture_normal = ExtResource("2_frns0")
+stretch_mode = 0
+
+[node name="leaf_particle" parent="." instance=ExtResource("6_6oc8v")]
+position = Vector2(636, 311)
+rotation = 2.78205
+scale = Vector2(0.715, -0.715)
+
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="start_texture_button" to="." method="_on_start_texture_button_pressed"]
