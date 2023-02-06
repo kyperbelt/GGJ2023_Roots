@@ -49,6 +49,10 @@ func _process(delta):
 			wind_elapsed = 0.0
 			set_windy(false)
 
+	if Input.is_action_just_pressed("add_boid"):
+		print("adding boid")
+		spawnBoid()
+
 
 func set_windy(windy := false):
 	is_windy = windy
@@ -79,3 +83,10 @@ func grow_start():
 func grow_finished():
 	print("grow end")
 	tree_animation.pause()
+
+func spawnBoid():
+	var boid: BoidArea2D = preload("res://src/boid.tscn").instantiate()
+	boid.setPlayer(player)
+	$boidFolder.add_child(boid)
+	
+	

@@ -213,6 +213,8 @@ texture = ExtResource("8_xqqe2")
 position = Vector2(2274, 1018)
 shape = SubResource("CapsuleShape2D_rdidg")
 
+[node name="boidFolder" type="Node" parent="."]
+
 [node name="Rock3Summer2" type="StaticBody2D" parent="."]
 position = Vector2(2073, 226)
 
